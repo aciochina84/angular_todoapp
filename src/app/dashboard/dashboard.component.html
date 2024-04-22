@@ -1,0 +1,66 @@
+<app-create-todo
+  *ngIf="showCreateTodoForm"
+  (CloseForm)="CloseCreateTodoForm()"
+  (EmitTodoData)="CreateTodo($event)"
+></app-create-todo>
+
+<div class="dashboard-container">
+  <div style="display: flex">
+    <div style="width: 50%">
+      <h2>Dashboard</h2>
+    </div>
+    <div style="width: 50%; text-align: right">
+      <button class="create-todo-btn" (click)="OpenCreateTodoForm()">
+        Create Todo
+      </button>
+    </div>
+  </div>
+
+  <hr />
+  <div class="checkbox-container">
+    <label>
+      <input type="checkbox" (change)="toggleShowCompleted()" />
+      Show All Todos
+    </label>
+    <br />
+    <div class="color-container">
+      <div class="status color-completed"><span>Completed</span></div>
+      <div class="status color-incompleted"><span>Incomplete</span></div>
+      <div class="status color-expired"><span>Expired</span></div>
+    </div>
+    <!-- <br />
+    <button type="button" class="refreshBtn" (click)="refreshTodoList()">
+      Refresh Todos
+    </button> -->
+  </div>
+  <div class="dashboard-item-container">
+    <div style="text-align: center" *ngIf="allTodos.length < 1">
+      <h2>No todo has been created yet!</h2>
+    </div>
+    <div
+      class="todo-item"
+      [ngClass]="{
+        'todo-complete': todo.completed,
+        'todo-incomplete': !todo.completed,
+        'todo-expired': todo.expired
+      }"
+      *ngFor="let todo of allTodos"
+    >
+      <div class="todo-title">
+        <h3>{{ todo.title }}</h3>
+      </div>
+      <p><b>Due Date: </b>{{ todo.dueDate | date }}</p>
+      <div class="todo-action-icons">
+        <button
+          class="todo-action-btn"
+          title="Mark Todo"
+          (click)="toggleTodoState(todo.id, todo.completed, todo.expired)"
+        >
+          <span>{{
+            todo.completed ? "Mark as Incomplete" : "Mark as Complete"
+          }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

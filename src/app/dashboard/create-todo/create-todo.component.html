@@ -1,0 +1,27 @@
+<div class="overlay">
+  <div class="popup">
+    <h2>Create a new Todo</h2>
+    <a class="close" href="#" (click)="OnCloseForm()">&times;</a>
+    <div class="content">
+      <section class="container">
+        <form
+          action="#"
+          class="form"
+          #todoForm="ngForm"
+          (ngSubmit)="OnFormSubmitted(todoForm)"
+        >
+          <div class="input-box">
+            <label>Todo Title: </label>
+            <input type="text" name="title" ngModel required />
+          </div>
+
+          <div class="input-box">
+            <label>Due Date: </label>
+            <input type="date" name="dueDate" ngModel required />
+          </div>
+          <button class="createTodo" type="submit">Create Todo</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

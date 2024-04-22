@@ -1,0 +1,204 @@
+.dashboard-container {
+  /* padding: 30px 100px; */
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  /* background-color: #fffef8; */
+}
+
+hr {
+  border: #6a6a6a 1.5px solid;
+  margin: 20px 0px;
+}
+.dashboard-item-container {
+  /* margin-top: 30px; */
+  padding: 30px 0px;
+  border: #fff 1.5px solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo-action-icons {
+  text-align: right;
+}
+.todo-action-btn {
+  margin: 0px 5px;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.todo-action-btn:hover {
+  border: 1px solid #606060;
+}
+
+/* .refreshBtn {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.refreshBtn:hover {
+  background-color: #3498db;
+  color: white;
+} */
+
+i {
+  font-size: 14px;
+}
+
+.todo-item {
+  width: 300px;
+  min-width: 150px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 3px;
+}
+
+.color-container {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 200px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.color-container .color-completed {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+.color-container .color-incompleted {
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+.color-container .color-expired {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+.todo-complete {
+  border-top: green 10px solid;
+}
+.todo-incomplete {
+  border-top: #3498db 10px solid;
+}
+.todo-expired {
+  border-top: red 10px solid;
+}
+.todo-title {
+  border-bottom: #28282b 2px solid;
+}
+
+.create-todo-btn {
+  padding: 12px 30px;
+  background-color: #3498db;
+  border: #cdcdcd 1px solid;
+  color: white;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sb {
+  min-width: 350px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  border-radius: 5px;
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  top: 40px; /* 30px from the bottom */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.sb-error {
+  background-color: #e74c3c; /* Black background color */
+  color: #fff; /* White text color */
+}
+
+.sb-success {
+  background-color: #1abc9c; /* Black background color */
+  color: #28282b; /* White text color */
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 40px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 40px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
